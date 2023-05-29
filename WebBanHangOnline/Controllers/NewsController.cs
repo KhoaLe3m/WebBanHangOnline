@@ -13,7 +13,13 @@ namespace WebBanHangOnline.Controllers
         private ApplicationDbContext _db = new ApplicationDbContext();
         public ActionResult Index()
         {
-            return View();
+            var items = _db.News.ToList();
+            return View(items);
+        }
+        public ActionResult Detail(int id)
+        {
+            var item = _db.News.Find(id);
+            return View(item);
         }
         public ActionResult Partial_News_Home()
         {

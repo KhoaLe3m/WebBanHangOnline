@@ -1,0 +1,46 @@
+﻿@model IEnumerable<WebBanHangOnline.Models.EF.New>
+@{
+    ViewBag.Title = "Index";
+}
+<link rel="stylesheet" type="text/css" href="~/Content/Assets/styles/main_styles.css">
+<link rel="stylesheet" type="text/css" href="~/Content/Assets/styles/responsive.css">
+<h2>Index</h2>
+<style>
+    .news_section_container{
+        margin-top:160px;
+    }
+    .title-new{
+        border-bottom:1px solid;
+    }
+</style>
+<div class="container news_section_container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="title-new">Tin tức</h2>
+        </div>
+    </div>
+
+    @if (Model != null && Model.Any())
+    {
+        foreach (var item in Model)
+        {
+<div class="row" style="margin-bottom:10px">
+    <div class="col-md-3">
+        <div class="img-box">
+            <a href="/chi-tiet/@item.Alias-@item.Id" title="@item.Title"><img height="150px" width="150px" src="@item.Image" alt="@item.Title" /></a>
+        </div>
+    </div>
+    <div class="col-md-9">
+        <div class="content-box">
+            <h3><a href="/tin-tuc/@item.Alias-n@(item.Id)">@item.Title</a></h3>
+        </div>
+        <div class="desctiption-box">
+            @item.Description
+        </div>
+    </div>
+</div>
+        }
+    }
+
+</div>
+

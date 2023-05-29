@@ -1,0 +1,39 @@
+﻿@model WebBanHangOnline.Models.EF.New
+@{
+    ViewBag.Title = "Detail";
+}
+<link rel="stylesheet" type="text/css" href="~/Content/Assets/styles/main_styles.css">
+<link rel="stylesheet" type="text/css" href="~/Content/Assets/styles/responsive.css">
+<h2>Index</h2>
+<style>
+    .news_section_container {
+        margin-top: 160px;
+    }
+
+    .title-new {
+        border-bottom: 1px solid;
+    }
+</style>
+<div class="container news_section_container">
+    @if (Model != null)
+    {
+        <div>
+            <div class="col-md-12">
+                <h2 class="text-center">@Model.Title</h2>
+            </div>
+        </div>
+        <hr />
+        <div>
+            <div class="col-md-12" style="font-size:15px">
+                @Model.Description
+            </div>
+        </div>
+        <div>
+            <div class="col-md-12">
+                @Html.Raw(Model.Detail)
+            </div>
+        </div>
+    }
+
+</div>
+
