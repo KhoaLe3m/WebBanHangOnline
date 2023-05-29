@@ -1,0 +1,83 @@
+﻿@model IEnumerable<WebBanHangOnline.Models.ApplicationUser>
+@{
+    ViewBag.Title = "Quản lý tài khoản";
+    var title = "tài khoản";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section naviheader{
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="/admin/home" class="nav-link">Trang chủ</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="/admin/role" class="nav-link">Danh mục @title</a>
+        </li>
+    </ul>}
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Quản lý @title</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="/admin/home">Home</a></li>
+                    <li class="breadcrumb-item active">Quản lý @title</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+<section class="content">
+
+    <!-- Default box -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Danh sách</h3>
+            <div class="card-tools">
+                <a href="/admin/account/create" class="btn btn-success">Thêm</a>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Tên</th>
+                        <th>Tên</th>
+                        <th>Email</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Any())
+                    {
+                        var i = 1;
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@i</td>
+                                <td>@item.UserName</td>
+                                <td>@item.FullName</td>
+                                <td>@item.Email</td>
+                                <td>
+                                    <a href="/admin/account/edit/@item.Id" class="btn btn-warning">Cập nhật</a>
+                                </td>
+                            </tr>
+                            i++;
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+            Footer
+        </div>
+        <!-- /.card-footer-->
+    </div>

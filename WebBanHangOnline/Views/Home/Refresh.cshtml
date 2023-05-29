@@ -1,0 +1,28 @@
+﻿@model WebBanHangOnline.Models.StatisticModel
+@if (Model != null)
+{
+    <div class="thong-ke">
+        <table class="table">
+            <tr>
+                <td>Hôm nay</td>
+                <td>@Model.HomNay</td>
+            </tr>
+            <tr>
+                <td>Hôm qua</td>
+                <td>@Model.HomQua</td>
+            </tr>
+            <tr>
+                <td>Tuần trước</td>
+                <td>@Model.TuanTruoc</td>
+            </tr>
+            <tr>
+                <td>Số người đang truy cập</td>
+                <td>@ViewBag.NguoiDungDangOnline</td>
+            </tr>
+            <tr>
+                <td>Tổng số lượng truy cập trang web</td>
+                <td>@Model.TatCa</td>
+            </tr>
+        </table>
+    </div>
+}

@@ -1,0 +1,101 @@
+﻿@model WebBanHangOnline.Models.EF.Order
+@{
+    ViewBag.Title = "Chi tiết đơn hàng";
+    var title = "đơn hàng";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section naviheader{
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="/admin/home" class="nav-link">Trang chủ</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="/admin/order" class="nav-link">Danh mục @title</a>
+        </li>
+    </ul>}
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Quản lý @title</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="/admin/home">Home</a></li>
+                    <li class="breadcrumb-item active">Chi tiết @title</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+<section class="content">
+
+    <!-- Default box -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">@title</h3>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Mã đơn hàng</label>
+                        <p class="form-control">@Model.Code</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Tên khách hàng</label>
+                        <p class="form-control">@Model.CustomerName</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Tổng tiền</label>
+                        <p class="form-control">@WebBanHangOnline.Common.FormatNumber(Model.TotalAmount, 0)</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Số điện thoại</label>
+                        <p class="form-control">@Model.Phone</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Ngày tạo</label>
+                        <p class="form-control">@Model.CreateAt.ToString("dd/MM/yyyy")</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <p class="form-control">@Model.Phone</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Trạng thái</label>
+                        <p class="form-control">@(Model.TypeOfPayment==1?"Chờ thanh toán!":"Đã thanh toán!")</p>
+                    </div>
+                </div>
+            </div>
+            @Html.Action("PartialProductView","Order")
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+            Footer
+        </div>
+        <!-- /.card-footer-->
+    </div>
+

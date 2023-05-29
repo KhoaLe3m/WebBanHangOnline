@@ -1,0 +1,96 @@
+﻿@{
+    ViewBag.Title = "Thanh toán";
+}
+
+<link rel="stylesheet" type="text/css" href="~/Content/Assets/styles/categories_styles.css">
+<link rel="stylesheet" type="text/css" href="~/Content/Assets/styles/categories_responsive.css">
+<style>
+    .error{
+        color:red;
+    }
+</style>
+<div class="container product_section_container">
+    <div class="row">
+        <div class="col product_section clearfix">
+
+            <!-- Breadcrumbs -->
+
+            <div class="breadcrumbs d-flex flex-row align-items-center">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li class="active"><a href="/"><i class="fa fa-angle-right" aria-hidden="true"></i>Thanh toán</a></li>
+                </ul>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h4>Thanh toán</h4>
+                    <h5>Kiểm tra lại danh sách hàng bạn nhé!</h5>
+                </div>
+            </div>
+            <!-- Main Content -->
+            <hr />
+            @if (ViewBag.CheckCart != null)
+            {
+                <div id="NotifycationFailOrder" class="row" style="display:none"></div>
+                <div class="row">
+                    <div class="col-md-8">
+                        @Html.Action("PartialViewFormUser", "ShoppingCart")
+                    </div>
+
+                    <div class="col-md-4">
+                        <h4>Giỏ hàng</h4>
+                        <div style="border:1px solid">
+                            @Html.Action("PartialItemCheckOut", "ShoppingCart")
+                        </div>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div>Không có sản phẩm nào trong giỏ hàng. Nhấp vào <a href="san-pham"> đây</a> để chọn các sản phẩm</div>
+            }
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script src="~/Content/Assets/js/categories_custom.js"></script>
+    <script>
+        function SucessOrder(rs) {
+            if (!rs.Success) {
+                $("#NotifycationFailOrder").html = "Mua hàng thất bại vui lòng kiểm tra lại!";
+            }
+        }
+        $(document).ready(function () {
+            $("#myForm").validate({
+                rules: {
+                    'CustomerName': {
+                        required: true
+                    },
+                    'Phone': {
+                        required: true,
+                    },
+                    "Address": {
+                        required: true
+                    },
+                    "Email": {
+                        required: true,
+                        email:true
+                    }
+                },
+                messages: {
+                    'CustomerName': "Bạn không được để trống trường này",
+                    'Phone': "Bạn không được để trống trường này",
+                    'Address': "Bạn không được để trống trường này",
+                    'Email': {
+                        required: "Bạn không được để trống trường này",
+                        email:"Nhập sai định dạng Email"
+                    }
+
+                }
+            })
+        })
+    </script>
+}
+
