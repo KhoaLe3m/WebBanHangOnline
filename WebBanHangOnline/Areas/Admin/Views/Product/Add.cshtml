@@ -102,19 +102,26 @@
                                     </div>
                                     <div class="col-2">
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Giá</label>
-                                            @Html.TextBoxFor(x => x.Price, new { @class = "form-control", @placeholder = "Giá sản phẩm", @id = "price" })
+                                            <label for="exampleInputEmail1">Giá bán</label>
+                                            @Html.TextBoxFor(x => x.Price, new { @class = "form-control", @placeholder = "Giá bán sản phẩm", @id = "price" })
                                             @Html.ValidationMessageFor(x => x.Price, null, new { @class = "text-danger" })
                                         </div>
                                     </div>
                                     <div class="col-2">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Giá khuyến mãi</label>
-                                            @Html.TextBoxFor(x => x.PriceSale, new { @class = "form-control", @placeholder = "Giá sản phẩm khuyến mãi" })
+                                            @Html.TextBoxFor(x =>  x.PriceSale, new { @class = "form-control", @placeholder = "Giá bán sản phẩm khuyến mãi" })
                                             @Html.ValidationMessageFor(x => x.PriceSale, null, new { @class = "text-danger" })
                                         </div>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-2">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Giá nhập</label>
+                                            @Html.TextBoxFor(x => x.OriginalPrice, new { @class = "form-control", @placeholder = "Giá nhập sản phẩm" })
+                                            @Html.ValidationMessageFor(x => x.OriginalPrice, null, new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
                                         <div class="row">
                                             <div class="col-auto">
                                                 <div class="form-group">
@@ -142,6 +149,13 @@
                                                     <label for="exampleInputPassword1">Khuyến mãi</label>
                                                     @Html.CheckBoxFor(x => x.IsSale, new { })
                                                     @Html.ValidationMessageFor(x => x.IsSale, null, new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <div class="form-group">
+                                                    <label for="exampleInputPassword1">Home</label>
+                                                    @Html.CheckBoxFor(x => x.IsHome, new { })
+                                                    @Html.ValidationMessageFor(x => x.IsHome, null, new { @class = "text-danger" })
                                                 </div>
                                             </div>
                                         </div>

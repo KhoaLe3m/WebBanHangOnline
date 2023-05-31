@@ -29,6 +29,7 @@ namespace WebBanHangOnline.Models.EF
         [AllowHtml]
         public string Detail { set; get; }
         public string Image { set; get; }
+        public decimal OriginalPrice { set; get; }
         public decimal Price { set; get; }
         public decimal? PriceSale { set; get; }
         public int Quantity { set; get; }

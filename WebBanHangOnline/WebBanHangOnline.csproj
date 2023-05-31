@@ -190,6 +190,7 @@
     <Compile Include="Areas\Admin\Controllers\ProductCategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductImageController.cs" />
+    <Compile Include="Areas\Admin\Controllers\RevenueController.cs" />
     <Compile Include="Areas\Admin\Controllers\RoleController.cs" />
     <Compile Include="Areas\Admin\Controllers\SettingSystemController.cs" />
     <Compile Include="Common\Common.cs" />
@@ -202,6 +203,10 @@
     <Compile Include="Migrations\202305260956574_UpdateSubcribe.cs" />
     <Compile Include="Migrations\202305260956574_UpdateSubcribe.Designer.cs">
       <DependentUpon>202305260956574_UpdateSubcribe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305300841116_UpdateProductOriginalPrice.cs" />
+    <Compile Include="Migrations\202305300841116_UpdateProductOriginalPrice.Designer.cs">
+      <DependentUpon>202305300841116_UpdateProductOriginalPrice.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\EF\StatisticView.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -3306,6 +3311,7 @@
     <Content Include="Areas\Admin\Views\Shared\_LayoutLogin.cshtml" />
     <Content Include="Areas\Admin\Views\SettingSystem\Index.cshtml" />
     <Content Include="Areas\Admin\Views\SettingSystem\Partial_Setting.cshtml" />
+    <Content Include="Areas\Admin\Views\Revenue\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -3387,6 +3393,7 @@
     <Folder Include="Uploads\flash\" />
     <Folder Include="Uploads\images\" />
     <Folder Include="Views\Accounts\" />
+    <Folder Include="Views\Revenue\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -3440,6 +3447,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202305260956574_UpdateSubcribe.resx">
       <DependentUpon>202305260956574_UpdateSubcribe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305300841116_UpdateProductOriginalPrice.resx">
+      <DependentUpon>202305300841116_UpdateProductOriginalPrice.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
