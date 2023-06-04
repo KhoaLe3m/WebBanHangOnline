@@ -52,7 +52,9 @@ namespace WebBanHangOnline.Areas.Admin.Controllers
                 model.ModifiderDate = DateTime.Now;
                 model.Alias = WebBanHangOnline.Models.Common.Filter.FilterChar(model.Title);
                 _db.Entry(model).Property(x => x.Title).IsModified = true;
+                _db.Entry(model).Property(x => x.Alias).IsModified = true;
                 _db.Entry(model).Property(x => x.Position).IsModified = true;
+                _db.Entry(model).Property(x => x.Link).IsModified = true;
                 _db.Entry(model).Property(x => x.Description).IsModified = true;
                 _db.Entry(model).Property(x => x.SeoTitle).IsModified = true;
                 _db.Entry(model).Property(x => x.SeoKeyWords).IsModified = true;

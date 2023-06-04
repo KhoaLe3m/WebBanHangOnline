@@ -24,6 +24,7 @@ namespace WebBanHangOnline.Models.EF
         public string Title { set; get; }
         [StringLength(150)]
         public string Alias { set; get; }
+        public string Link { set; get; }
         public string Description { set; get; }
         public int Position { set; get; }
         public string SeoTitle { set; get; }

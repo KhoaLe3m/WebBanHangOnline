@@ -54,38 +54,48 @@
                     @Html.ValidationSummary(true)
                     @Html.HiddenFor(x => x.Id)
                     <!-- your steps content here -->
-                    <div id="logins-part" class="content" role="tabpanel" aria-labelledby="logins-part-trigger">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Tên danh mục</label>
-                            @Html.TextBoxFor(x => x.Title, new { @class = "form-control", @placehoder = "Tên danh mục" })
-                            @Html.ValidationMessageFor(x => x.Title, null, new { @class = "text-danger" })
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Thứ tự</label>
-                            @Html.TextBoxFor(x => x.Position, new { @class = "form-control", @Value = "1" })
-                            @Html.ValidationMessageFor(x => x.Position, null, new { @class = "text-danger" })
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Mô tả</label>
-                            @Html.TextAreaFor(x => x.Description, new { @class = "form-control", @placehoder = "Mô tả danh mục" })
-                            @Html.ValidationMessageFor(x => x.Description, null, new { @class = "text-danger" })
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Seo Title</label>
-                            @Html.TextAreaFor(x => x.SeoTitle, new { @class = "form-control", @placehoder = "Seo Title" })
-                            @Html.ValidationMessageFor(x => x.SeoTitle, null, new { @class = "text-danger" })
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">SEO Key Words</label>
-                            @Html.TextAreaFor(x => x.SeoKeyWords, new { @class = "form-control", @placehoder = "SEO Key Words" })
-                            @Html.ValidationMessageFor(x => x.SeoKeyWords, null, new { @class = "text-danger" })
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Mô tả SEO</label>
-                            @Html.TextAreaFor(x => x.SeoDescription, new { @class = "form-control", @placehoder = "Mô tả SEO" })
-                            @Html.ValidationMessageFor(x => x.SeoDescription, null, new { @class = "text-danger" })
-                        </div>
+                <div id="logins-part" class="content" role="tabpanel" aria-labelledby="logins-part-trigger">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Tên danh mục</label>
+                        @Html.TextBoxFor(x => x.Title, new { @class = "form-control", @placehoder = "Tên danh mục" })
+                        @Html.ValidationMessageFor(x => x.Title, null, new { @class = "text-danger" })
                     </div>
+                    <div class="form-group">
+                        <label for="exampleInputAlias">Alias</label>
+                        @Html.TextBoxFor(x => x.Alias, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Alias, null, new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputLink">Link</label>
+                        @Html.TextBoxFor(x => x.Link, new { @class = "form-control"})
+                        @Html.ValidationMessageFor(x => x.Link, null, new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Thứ tự</label>
+                        @Html.TextBoxFor(x => x.Position, new { @class = "form-control", @Value = "1" })
+                        @Html.ValidationMessageFor(x => x.Position, null, new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Mô tả</label>
+                        @Html.TextAreaFor(x => x.Description, new { @class = "form-control", @placehoder = "Mô tả danh mục" })
+                        @Html.ValidationMessageFor(x => x.Description, null, new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Seo Title</label>
+                        @Html.TextAreaFor(x => x.SeoTitle, new { @class = "form-control", @placehoder = "Seo Title" })
+                        @Html.ValidationMessageFor(x => x.SeoTitle, null, new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">SEO Key Words</label>
+                        @Html.TextAreaFor(x => x.SeoKeyWords, new { @class = "form-control", @placehoder = "SEO Key Words" })
+                        @Html.ValidationMessageFor(x => x.SeoKeyWords, null, new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Mô tả SEO</label>
+                        @Html.TextAreaFor(x => x.SeoDescription, new { @class = "form-control", @placehoder = "Mô tả SEO" })
+                        @Html.ValidationMessageFor(x => x.SeoDescription, null, new { @class = "text-danger" })
+                    </div>
+                </div>
                     <div id="information-part" class="content" role="tabpanel" aria-labelledby="information-part-trigger">
 
                         <a class="btn btn-primary" href="/admin/category">Quay lại</a>

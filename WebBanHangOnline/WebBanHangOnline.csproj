@@ -195,6 +195,7 @@
     <Compile Include="Areas\Admin\Controllers\SettingSystemController.cs" />
     <Compile Include="Common\Common.cs" />
     <Compile Include="Common\SettingHelper.cs" />
+    <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Migrations\202304231020197_UpdateEmail.cs" />
     <Compile Include="Migrations\202304231020197_UpdateEmail.Designer.cs">
@@ -207,6 +208,10 @@
     <Compile Include="Migrations\202305300841116_UpdateProductOriginalPrice.cs" />
     <Compile Include="Migrations\202305300841116_UpdateProductOriginalPrice.Designer.cs">
       <DependentUpon>202305300841116_UpdateProductOriginalPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306040626593_CategoryUpdate3.cs" />
+    <Compile Include="Migrations\202306040626593_CategoryUpdate3.Designer.cs">
+      <DependentUpon>202306040626593_CategoryUpdate3.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\EF\StatisticView.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -3385,10 +3390,12 @@
     <Content Include="Views\Home\Partial_Subcribe.cshtml" />
     <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\News\Detail.cshtml" />
+    <Content Include="Views\Article\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Views\Article\" />
     <Folder Include="Content\ckfinder\userfiles\" />
     <Folder Include="Uploads\flash\" />
     <Folder Include="Uploads\images\" />
@@ -3450,6 +3457,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202305300841116_UpdateProductOriginalPrice.resx">
       <DependentUpon>202305300841116_UpdateProductOriginalPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306040626593_CategoryUpdate3.resx">
+      <DependentUpon>202306040626593_CategoryUpdate3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

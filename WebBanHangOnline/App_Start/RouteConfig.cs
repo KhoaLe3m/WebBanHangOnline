@@ -67,11 +67,18 @@ namespace WebBanHangOnline
                 namespaces: new[] { "WebBanHangOnline.Controllers" }
             );
             routes.MapRoute(
+                name: "Posts",
+                url: "post/{alias}",
+                defaults: new { controller = "Article", action = "Index", alias = UrlParameter.Optional },
+                namespaces: new[] { "WebBanHangOnline.Controllers" }
+            );
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
                 namespaces: new[] { "WebBanHangOnline.Controllers" }
             );
+
             
             routes.MapRoute(
             name: "Error",

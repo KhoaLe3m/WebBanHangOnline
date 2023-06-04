@@ -1,4 +1,4 @@
-﻿
+﻿@using WebBanHangOnline
 @{
     ViewBag.Title = "Index";
 }
@@ -12,7 +12,7 @@
 
             <div class="breadcrumbs d-flex flex-row align-items-center">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">Liên Hệ</a></li>
                     <li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Contact</a></li>
                 </ul>
             </div>
@@ -26,7 +26,9 @@
         <div class="col">
             <div id="google_map">
                 <div class="map_container">
-                    <div id="map"></div>
+                    <div id="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4010340126047!2d106.66643137476647!3d10.780565359117954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ed0a2951b1b%3A0xeda0c989cb7c7e1f!2zMTU2IFTDtCBIaeG6v24gVGjDoG5oLCBQaMaw4budbmcgMTMsIFF14bqtbiAxMCwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1685861240824!5m2!1svi!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
@@ -38,14 +40,10 @@
 
         <div class="col-lg-6 contact_col">
             <div class="contact_contents">
-                <h1>Contact Us</h1>
-                <p>There are many ways to contact us. You may drop us a line, give us a call or send an email, choose what suits you the most.</p>
+                <h1>Liên hệ</h1>
                 <div>
-                    <p>(800) 686-6688</p>
-                    <p>info.deercreative@gmail.com</p>
-                </div>
-                <div>
-                    <p>mm</p>
+                    <p>Hotline: @WebBanHangOnline.SettingHelper.GetValue("SettingHoline")</p>
+                    <p>Email: @WebBanHangOnline.SettingHelper.GetValue("SettingEmail")</p>
                 </div>
                 <div>
                     <p>Open hours: 8.00-18.00 Mon-Fri</p>
@@ -58,10 +56,8 @@
             <div class="follow_us_contents">
                 <h1>Follow Us</h1>
                 <ul class="social d-flex flex-row">
-                    <li><a href="#" style="background-color: #3a61c9"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li><a href="#" style="background-color: #41a1f6"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    <li><a href="#" style="background-color: #fb4343"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                    <li><a href="#" style="background-color: #8f6247"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.facebook.com/le.khoa.9883739" style="background-color: #3a61c9"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.instagram.com/khoaatann/" style="background-color: #8f6247"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                 </ul>
             </div>
 
@@ -89,4 +85,4 @@
 </div>
 @section scripts{
     <script src="~/Content/Assets/js/contact_custom.js"></script>
-    }
+}
