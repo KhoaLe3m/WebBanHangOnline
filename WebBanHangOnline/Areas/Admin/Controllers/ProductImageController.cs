@@ -23,12 +23,12 @@ namespace WebBanHangOnline.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult AddImage(int productId,string url)
         {
-            _db.ProductImages.Add(new ProductImage
-            {
-                ProductId = productId,
-                Image = url,
-                IsDefault = false
-            });
+                _db.ProductImages.Add(new ProductImage
+                {
+                    ProductId = productId,
+                    Image = url,
+                    IsDefault = false
+                });
             _db.SaveChanges();
             return Json(new {  Success = true} );
         }

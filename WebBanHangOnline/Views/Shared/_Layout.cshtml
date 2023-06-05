@@ -1,10 +1,11 @@
 ﻿@using WebBanHangOnline
 @using Microsoft.AspNet.Identity;
 @using Microsoft.Owin.Security;
+@using WebBanHangOnline
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Colo Shop</title>
+    <title>Shop Online</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Colo Shop Template">
@@ -16,6 +17,23 @@
     <link rel="stylesheet" type="text/css" href="~/Content/Assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
     <link rel="stylesheet" type="text/css" href="~/Content/Assets/plugins/OwlCarousel2-2.2.1/animate.css">
     <link rel="stylesheet" type="text/css" href="~/Content/Assets/styles/responsive.css">
+    <meta name="description" content="@ViewBag.SeoDescription" />
+    <meta name="keywords" content="@ViewBag.SeoKeyWord"/>
+    @*<meta name="news_keywords" content="lũ lụt,lũ lớn,lũ ống lũ quét,Nhơn Trạch" />*@
+    <link rel="canonical" href="tenmiencuaminh.com" />
+    <meta name="robots" content="index,follow,noodp" />
+    <meta name="robots" content="noarchive">
+    <meta property="og:site_name" content="Tin tức 24h" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="vi_VN" />
+    @*<meta property="fb:app_id" content="232505114857147" />
+    <meta property="fb:pages" content="1128104117285467" />*@
+    <meta property="og:title" itemprop="name" content="@ViewBag.Title" />
+    <meta property="og:url" itemprop="url" content="https://www.24h.com.vn/tin-tuc-trong-ngay/hinh-anh-tan-hoang-sau-tran-lu-cuc-lon-toi-4-6-o-dong-nai-c46a1472708.html" />
+    <meta property="og:description" content="@ViewBag.SeoDescription" />
+    <meta content="https://cdn.24h.com.vn/upload/2-2023/images/2023-06-05/1685941381-img8756-16859369309281493380337-watermark.jpg" property="og:image" itemprop="thumbnailUrl" />
+    <meta name="pubdate" itemprop="datePublished" content="2023-06-05T12:07:00+07:00" />
+    <meta itemprop="dateModified" content="2023-06-05T12:07:00+07:00" />
     @*@Styles.Render("~/Content/css")*@
     @Scripts.Render("~/bundles/modernizr")
     <script src="~/Content/Assets/js/jquery-3.2.1.min.js"></script>

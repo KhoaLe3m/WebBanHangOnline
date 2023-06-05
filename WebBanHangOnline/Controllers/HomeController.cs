@@ -13,6 +13,7 @@ namespace WebBanHangOnline.Controllers
         private ApplicationDbContext _db = new ApplicationDbContext();
         public ActionResult Index()
         {
+            ViewBag.Title = "Shop Online";
             return View();
         }
 
