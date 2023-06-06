@@ -88,7 +88,7 @@ namespace WebBanHangOnline.Areas.Admin.Controllers
             {
                 return View(item);
             }
-            return View("Index");
+            return RedirectToAction("Index","Product");
         }
         [HttpPost]
         [ValidateAntiForgeryToken]

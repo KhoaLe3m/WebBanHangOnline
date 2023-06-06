@@ -31,11 +31,19 @@ namespace WebBanHangOnline.Areas.Admin.Controllers
         public ActionResult View(int id)
         {
             var item = _db.Orders.Find(id);
-            return View(item);
+            if (item != null)
+            {
+                return View(item);
+            }
+            return RedirectToAction("Index", "Order");
         }
         public ActionResult PartialProductView(int id) {
             var items = _db.OrderDetails.Where(x => x.OrderId == id);
-            return PartialView(items);
+            if (items != null)
+            {
+                return PartialView(items);
+            }
+            return RedirectToAction("Index", "Post");
         }
         [HttpPost]
         public ActionResult UpdateTT(int id,int trangthai)

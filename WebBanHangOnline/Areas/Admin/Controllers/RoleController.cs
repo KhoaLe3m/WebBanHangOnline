@@ -38,7 +38,11 @@ namespace WebBanHangOnline.Areas.Admin.Controllers
         public ActionResult Edit(string id)
         {
             var item = _db.Roles.Find(id);
-            return View(item);
+            if (item != null)
+            {
+                return View(item);
+            }
+            return RedirectToAction("Index", "Role");
         }
         [HttpPost]
         [ValidateAntiForgeryToken]

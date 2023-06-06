@@ -30,10 +30,15 @@ namespace WebBanHangOnline.Areas.Admin.Controllers
 
             ViewBag.PageSize = pageSize;
             ViewBag.Page = page;
-            return View(items.ToPagedList(pageIndex, pageSize));
+            if(items !=null && items.Any())
+            {
+                return View(items.ToPagedList(pageIndex, pageSize));
+            }
+            return RedirectToAction("Index");
         }
         public ActionResult Add()
         {
+            ViewBag.Category = new SelectList(_db.Categories.ToList(), "Id", "Title");
             return View();
         }
         [HttpPost]
@@ -42,9 +47,9 @@ namespace WebBanHangOnline.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                ViewBag.Category = new SelectList(_db.Categories.ToList(), "Id", "Title");
                 model.CreateAt = DateTime.Now;
                 model.ModifiderDate = DateTime.Now;
-                model.CategoryId = 3;
                 model.Alias = WebBanHangOnline.Models.Common.Filter.FilterChar(model.Title);
                 _db.News.Add(model);
                 _db.SaveChanges();
@@ -52,10 +57,15 @@ namespace WebBanHangOnline.Areas.Admin.Controllers
             }
             return View(model);
         }
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int id,int? page)
         {
+            ViewBag.Category = new SelectList(_db.Categories.ToList(), "Id", "Title");
             var item = _db.News.Find(id);
-            return View(item);
+            if(item != null)
+            {
+                return View(item);
+            };
+            return RedirectToAction("Index", "New"); 
         }
         [HttpPost]
         [ValidateAntiForgeryToken]

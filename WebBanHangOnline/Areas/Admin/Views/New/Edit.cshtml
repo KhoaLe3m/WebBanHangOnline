@@ -58,7 +58,6 @@
                         @Html.AntiForgeryToken()
                         @Html.ValidationSummary(true)
                         @Html.HiddenFor(x => x.Id)
-                        @Html.HiddenFor(x=> x.CategoryId)
                         @Html.HiddenFor(x => x.CreateAt)
                         <!-- your steps content here -->
                     <div id="logins-part" class="content" role="tabpanel" aria-labelledby="logins-part-trigger">
@@ -87,6 +86,11 @@
                             <label for="exampleInputPassword1">Chi tiết</label>
                             @Html.TextAreaFor(x => x.Detail, new { @class = "form-control", @placehoder = "Chi tiết tin tức", @id = "txtDetail" })
                             @Html.ValidationMessageFor(x => x.Detail, null, new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Danh mục sản phẩm</label>
+                            @Html.DropDownListFor(x => x.CategoryId, ViewBag.Category as SelectList, "-chọn danh mục tin tức-", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.CategoryId, null, new { @class = "text-danger" })
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Hiển thị</label>
