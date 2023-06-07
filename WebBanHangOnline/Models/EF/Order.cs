@@ -29,6 +29,7 @@ namespace WebBanHangOnline.Models.EF
         public string Email { set; get; }
         public decimal TotalAmount { set; get; }
         [Required]
+        public int Status { set; get; }
         public int TypeOfPayment { set; get; }
         public int Quantity { set; get; }
         public ICollection<OrderDetail> OrderDetails { set; get; }

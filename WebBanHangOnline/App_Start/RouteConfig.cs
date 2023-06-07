@@ -73,6 +73,12 @@ namespace WebBanHangOnline
                 namespaces: new[] { "WebBanHangOnline.Controllers" }
             );
             routes.MapRoute(
+                name: "Vnpay_return",
+                url: "vnpayreturn",
+                defaults: new { controller = "ShoppingCart", action = "VnpayReturn", alias = UrlParameter.Optional },
+                namespaces: new[] { "WebBanHangOnline.Controllers" }
+            );
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },

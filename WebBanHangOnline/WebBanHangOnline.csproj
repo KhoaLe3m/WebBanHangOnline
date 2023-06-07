@@ -213,6 +213,14 @@
     <Compile Include="Migrations\202306040626593_CategoryUpdate3.Designer.cs">
       <DependentUpon>202306040626593_CategoryUpdate3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202306071119462_Update-OrderViewModel.cs" />
+    <Compile Include="Migrations\202306071119462_Update-OrderViewModel.Designer.cs">
+      <DependentUpon>202306071119462_Update-OrderViewModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306071334219_AddStatusOrder.cs" />
+    <Compile Include="Migrations\202306071334219_AddStatusOrder.Designer.cs">
+      <DependentUpon>202306071334219_AddStatusOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\EF\StatisticView.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
@@ -290,6 +298,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\OrderViewModel.cs" />
+    <Compile Include="Models\Payment\VnPayLibrary.cs" />
     <Compile Include="Models\SettingSystemViewModel.cs" />
     <Compile Include="Models\ShoppingCart.cs" />
     <Compile Include="Models\StatisticViewModel.cs" />
@@ -3391,6 +3400,7 @@
     <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\News\Detail.cshtml" />
     <Content Include="Views\Article\Index.cshtml" />
+    <Content Include="Views\ShoppingCart\VnpayReturn.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3460,6 +3470,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202306040626593_CategoryUpdate3.resx">
       <DependentUpon>202306040626593_CategoryUpdate3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306071119462_Update-OrderViewModel.resx">
+      <DependentUpon>202306071119462_Update-OrderViewModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306071334219_AddStatusOrder.resx">
+      <DependentUpon>202306071334219_AddStatusOrder.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -22,7 +22,7 @@ namespace WebBanHangOnline.Areas.Admin.Controllers
         {
             var query = from o in _db.Orders
                         join od in _db.OrderDetails
-                        on o.Id equals od.Id
+                        on o.Id equals od.OrderId
                         join pro in _db.Products
                         on od.ProductId equals pro.Id
                         select new
@@ -32,6 +32,7 @@ namespace WebBanHangOnline.Areas.Admin.Controllers
                             Price = od.Price,
                             OriginalPrice = pro.OriginalPrice
                         };
+            
             if (!string.IsNullOrEmpty(fromDate))
             {
                 DateTime startDate = DateTime.ParseExact(fromDate, "DD/MM/yyyy", null);

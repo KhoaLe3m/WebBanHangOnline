@@ -51,8 +51,10 @@
                         <th>Số điện thoại</th>
                         <th>Địa chỉ</th>
                         <th>Tổng tiền</th>
+                        <th>Phương thức thanh toán</th>
                         <th>Trạng thái</th>
                         <th>Ngày tạo</th>
+                        <th>Thao tác</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -62,18 +64,34 @@
                         foreach (var item in Model)
                         {
 
-                            <tr>
-                                <td>@i</td>
-                                <td>@item.Code</td>
-                                <td>@item.CustomerName</td>
-                                <td>@item.Phone</td>
-                                <td>@item.Address</td>
-                                <td>@WebBanHangOnline.Common.FormatNumber(item.TotalAmount, 0)</td>
-                                <td>@(item.TypeOfPayment==1?"Chờ thanh toán!":"Đã thanh toán!")</td>
-                                <td>@item.CreateAt.ToString("dd/MM/yyyy")</td>
-                                <td><a href="/admin/order/view/@item.Id" class="btn btn-success">Xem</a></td>
-                                <td><a href="#" class="btn btn-danger btnUpdate" data-id="@item.Id">Cập nhật</a></td>
-                            </tr>
+                    <tr>
+                        <td>@i</td>
+                        <td>@item.Code</td>
+                        <td>@item.CustomerName</td>
+                        <td>@item.Phone</td>
+                        <td>@item.Address</td>
+                        <td>@WebBanHangOnline.Common.FormatNumber(item.TotalAmount, 0)</td>
+                        <td>@(item.TypeOfPayment==1?"SHIP COD":"Thanh toán online")</td>
+
+                        @if (item.Status == 1)
+                        {
+                            <td>Chưa thanh toán</td>
+                        }
+                        else if (item.Status == 2)
+                        {
+                            <td style="color:green">Đã Thanh Toán</td>
+                        }
+                        else if(item.Status == 3)
+                        {
+                        <td style="color:red">Hủy đơn hàng</td>
+                    }else
+                    {
+                        <td>Trống</td>
+                    }
+                        <td>@item.CreateAt.ToString("dd/MM/yyyy")</td>
+                        <td><a href="/admin/order/view/@item.Id" class="btn btn-success">Xem</a></td>
+                        <td><a href="#" class="btn btn-danger btnUpdate" data-id="@item.Id">Cập nhật</a></td>
+                    </tr>
                             i++;
                         }
 
@@ -108,7 +126,9 @@
                     <div class="form-group">
                         <label>Trạng thái</label>
                         <select class="form-control" id="ddTrangThai">
-                            <option value="2" >Đã thanh toán</option>
+                            <option value="1">Chưa Thanh toán</option>
+                            <option value="2">Đã thanh toán</option>
+                            <option value="3">Hủy đơn</option>
                         </select>
                     </div>
                 </div>
@@ -128,6 +148,8 @@
             $("body").on("click", ".btnUpdate", function () {
                 var id = $(this).data("id");
                 $("#txtOrderId").val(id);
+                // Lấy giá trị trạng thái hiện tại và đặt giá trị cho dropdown
+                
                 $("#modal-default").modal("show");
             })
             $("body").on("click", ".btnSave", function () {

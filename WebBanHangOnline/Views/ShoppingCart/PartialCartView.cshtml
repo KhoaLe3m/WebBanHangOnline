@@ -27,9 +27,9 @@
                         <a href="/chi-tiet/@item.Alias-p@(item.ProductId)">@item.ProductName</a>
                     </td>
                     <td>@item.CategoryProductName</td>
-                    <td>@WebBanHangOnline.Common.FormatNumber(item.Price, 0)</td>
+                    <td>@WebBanHangOnline.Common.FormatNumber(item.Price, 2)$ </td>
                     <td><input id="Quantity_@item.ProductId" type="number" class="form-control" value="@item.Quantity" /> </td>
-                    <th>@WebBanHangOnline.Common.FormatNumber(item.TotalPrice)</th>
+                    <th>@WebBanHangOnline.Common.FormatNumber(item.TotalPrice,2)$</th>
                     <td>
                         <a href="#" data-id="@item.ProductId" class=" btn btn-danger btnDelete btn-sm">
                             @*<i class="fa fa-trash fa-xl" style="color: #ed0c0c;">
@@ -47,7 +47,7 @@
             }
             <tr>
                 <th colspan="6" class="text-right">Tổng:</th>
-                <th class="text-left">@WebBanHangOnline.Common.FormatNumber(sum, 0)</th>
+                <th class="text-left">@WebBanHangOnline.Common.FormatNumber(sum, 0)$</th>
             </tr>
             <tr>
                 <th colspan="6" class="text-right"></th>

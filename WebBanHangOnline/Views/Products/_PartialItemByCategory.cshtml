@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<WebBanHangOnline.Models.EF.Product>
+@using WebBanHangOnline
 @if (Model != null && Model.Any())
 {
     foreach (var item in Model)
@@ -17,30 +18,24 @@
                 <div class="favorite favorite_left"></div>
                 @if (item.IsSale)
                 {
-                    var x = item.PriceSale - item.Price;
-                    <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>@x</span></div>
-
-                }
-                else
-                {
-                    <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span></span></div>
-
+                    var x = Convert.ToDouble(WebBanHangOnline.Common.FormatNumber((1-(item.PriceSale/item.Price)),2))*100;
+                    <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-@x %</span></div>
                 }
                 <div class="product_info">
                     <h6 class="product_name"><a href="/chi-tiet/@item.Alias-p@(item.Id)">@item.Title</a></h6>
                     @if (item.PriceSale > 0)
                     {
-                        <div class="product_price"> @item.PriceSale<span>@item.Price</span></div>
+                        <div class="product_price"> @WebBanHangOnline.Common.FormatNumber(item.PriceSale)đ  <span>@WebBanHangOnline.Common.FormatNumber(item.Price)đ</span></div>
 
                     }
                     else
                     {
-                        <div class="product_price"> @item.Price<span>@item.Price</span></div>
+                <div class="product_price"> @WebBanHangOnline.Common.FormatNumber(item.Price)đ</div>
 
                     }
                 </div>
             </div>
-            <div class="red_button add_to_cart_button"><a href="#" class="btnAddToCart" data-id="@item.Id">add to cart</a></div>
+            <div class="red_button add_to_cart_button"><a href="#" class="btnAddToCart" data-id="@item.Id">Thêm vào giỏ hàng</a></div>
         </div>
     }
 }

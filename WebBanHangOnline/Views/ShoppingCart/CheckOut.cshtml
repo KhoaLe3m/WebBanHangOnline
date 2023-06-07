@@ -63,6 +63,13 @@
             }
         }
         $(document).ready(function () {
+            $("body").on("change", "#IdTypeOfPayment", function () {
+                var type = $(this).val();
+                $("#load-form-payment").hide();
+                if (type == 2) {
+                    $("#load-form-payment").show();
+                }
+            })
             $("#myForm").validate({
                 rules: {
                     'CustomerName': {

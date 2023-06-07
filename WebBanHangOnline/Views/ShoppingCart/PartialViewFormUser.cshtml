@@ -4,10 +4,22 @@
     HttpMethod = "POST",
     UpdateTargetId = "loaddata",
     OnComplete="SucessOrder",
-    OnFailure= "FailOrder"
+    OnFailure= "FailOrder",
+    OnSuccess = "OnSuccessCo"
 
 }, new { @id = "myForm" }))
 {
+    <script>
+        function OnSuccessCo(rs) {
+            if (rs.Success) {
+                if (rs.Code = 0) {
+                    location.href = "/ShoppingCart/CheckOutSuccess";
+                } else {
+                    location.href = rs.Url;
+                }
+            }
+        }
+    </script>
     @Html.AntiForgeryToken()
     <h4>Thông tin khách hàng</h4>
     <div class="form-group">
@@ -28,10 +40,23 @@
     </div>
     <div class="form-group">
         <label>Chọn hình thức thanh toán</label>
-        <select class="form-control" name="TypeOfPayment">
+        <select class="form-control" name="TypeOfPayment" id="IdTypeOfPayment">
             <option value="1">COD</option>
             <option value="2">Chuyển khoản</option>
         </select>
+    </div>
+    <div class="form-group" id="load-form-payment" style="display:none" >
+        <h4><label>Chọn phương thức thanh toán</label></h4>
+        <h5><label>Cách 1: Chuyển hướng sang VNPAY chọn phương thức thanh toán</label></h5>
+        <label><input type="radio" name="TypeOfPaymentVNPay" value="0" />Cổng thanh toán VNPAYQR</label><br />
+        <h5><label>Cách 2:Tách phương thức thanh toán tại site của Merchant</label></h5>
+        <label>
+            <input type="radio" name="TypeOfPaymentVNPay" value="1" />Thanh toán qua ứng dụng hỗ trợ VNPAYQR
+        </label><br />
+        <label>
+            <input type="radio" name="TypeOfPaymentVNPay" value="2" /> ATM-Tài khoản ngân hàng nội địa
+        </label><br />
+        <label><input type="radio" name="TypeOfPaymentVNPay" value="3" />Thanh toán qua thẻ quốc tế</label>
     </div>
     <div class="form-group">
         <button type="submit" class="btn btn-success">Đặt hàng</button>

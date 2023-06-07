@@ -27,7 +27,7 @@ namespace WebBanHangOnline.Controllers
                 _db.SaveChanges();
                 return View(item);
             }
-            return View("Index", "Home");
+            return RedirectToAction("Error", "Home");
         }
         public ActionResult ProductCategory(string alias,int? id)
         {

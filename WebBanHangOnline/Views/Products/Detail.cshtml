@@ -14,7 +14,7 @@
 
                 <div class="breadcrumbs d-flex flex-row align-items-center">
                     <ul>
-                        <li><a href="/">Home</a></li>
+                        <li><a href="/">Trang chủ</a></li>
                         <li><a href="/danh-muc-san-pham/@Model.ProductCategory.Alias-@(Model.ProductCategoryId)"><i class="fa fa-angle-right" aria-hidden="true"></i>@Model.ProductCategory.Title</a></li>
                         <li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>@Model.Title</a></li>
                     </ul>
@@ -66,12 +66,12 @@
                     </div>
                     @if (Model.IsSale)
                     {
-                        <div class="original_price">@WebBanHangOnline.Common.FormatNumber(Model.Price, 2)</div>
-                        <div class="product_price">@WebBanHangOnline.Common.FormatNumber(Model.PriceSale, 2)</div>
+                        <div class="original_price">@WebBanHangOnline.Common.FormatNumber(Model.Price, 2)đ</div>
+                        <div class="product_price">@WebBanHangOnline.Common.FormatNumber(Model.PriceSale, 2)đ</div>
                     }
                     else
                     {
-                        <div class="original_price">@WebBanHangOnline.Common.FormatNumber(Model.Price, 2)</div>
+                        <div class="original_price">@WebBanHangOnline.Common.FormatNumber(Model.Price, 2)đ</div>
                     }
                     <ul class="star_rating">
                         <li><i class="fa fa-star" aria-hidden="true"></i></li>

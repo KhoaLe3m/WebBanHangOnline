@@ -24,14 +24,14 @@
                 </td>
                 <td>@item.Quantity</td>
 
-                <td>@WebBanHangOnline.Common.FormatNumber(item.TotalPrice)</td>
+                <td>@WebBanHangOnline.Common.FormatNumber(item.TotalPrice,2)$</td>
             </tr>
                 i++;
             }
         </tbody>
         <tr>
             <th colspan="4" class="text-right">Tổng:</th>
-            <th class="text-left">@WebBanHangOnline.Common.FormatNumber(sum, 0)</th>
+            <th class="text-left">@WebBanHangOnline.Common.FormatNumber(sum, 2)$</th>
         </tr>
     }
     else

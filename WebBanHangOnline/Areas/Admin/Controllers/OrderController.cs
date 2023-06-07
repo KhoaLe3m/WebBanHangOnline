@@ -53,7 +53,7 @@ namespace WebBanHangOnline.Areas.Admin.Controllers
             if (item != null)
             {
                 _db.Orders.Attach(item);
-                item.TypeOfPayment = trangthai;
+                item.Status = trangthai;
                 _db.Entry(item).Property(x => x.TypeOfPayment).IsModified = true;
                 _db.SaveChanges();
                 code = new { Success = true, code = 1 };

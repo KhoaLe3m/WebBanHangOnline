@@ -19,9 +19,9 @@
                 {
                     <tr>
                         <td>@item.Products.Title</td>
-                        <td>@(item.Price)</td>
-                        <td>@item.Quantity</td>
-                        <td>@(item.Quantity * item.Price)</td>
+                        <td>@WebBanHangOnline.Common.FormatNumber(item.Price,2)đ</td>
+                        <td>@WebBanHangOnline.Common.FormatNumber(item.Quantity)</td>
+                        <td>@WebBanHangOnline.Common.FormatNumber(item.Quantity * item.Price)đ</td>
                     </tr>
                 }
             </tbody>

@@ -2,29 +2,39 @@
 @{
     ViewBag.Title = "Chi tiết tin tức";
 }
-<link rel="stylesheet" type="text/css" href="~/Content/Assets/styles/main_styles.css">
-<link rel="stylesheet" type="text/css" href="~/Content/Assets/styles/responsive.css">
-<h2>Index</h2>
+<link rel="stylesheet" type="text/css" href="~/Content/Assets/styles/categories_styles.css">
+<link rel="stylesheet" type="text/css" href="~/Content/Assets/styles/categories_responsive.css">
+<link rel="stylesheet" type="text/css" href="~/Content/Assets/styles/bootstrap4/bootstrap.min.css">
 <style>
     .news_section_container {
         margin-top: 160px;
     }
-
-    .title-new {
-        border-bottom: 1px solid;
-    }
 </style>
+
 <div class="container news_section_container">
+    <div class="row">
+        <div class="col product_section clearfix">
+
+            <!-- Breadcrumbs -->
+
+            <div class="breadcrumbs d-flex flex-row align-items-center">
+                <ul>
+                    <li><a href="/">Trang chủ</a></li>
+                    <li class="active"><a href="/post/@Model.Alias"><i class="fa fa-angle-right" aria-hidden="true"></i>@Model.Title</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
     @if (Model != null)
     {
         <div>
             <div class="col-md-12">
-                <h2 class="text-center">@Model.Title</h2>
+                <h2 style="text-align:center">@Model.Title</h2>
             </div>
         </div>
         <hr />
         <div>
-            <div class="col-md-12" style="font-size:15px">
+            <div class="col-md-12" style="font-size:15px;text-align:center">
                 @Model.Description
             </div>
         </div>
